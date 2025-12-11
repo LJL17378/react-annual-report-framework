@@ -37,7 +37,7 @@ const AppContent: React.FC = () => {
         modules={[Mousewheel]}
         mousewheel={true}
         speed={500}
-        style={{ height: "100vh", width: "100vw" }}
+        style={{ height: "100%", width: "100%" }}
         onSlideChange={(swiper) => setActiveIndex(swiper.activeIndex)}
         threshold={10}
       >

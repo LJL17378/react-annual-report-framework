@@ -1,6 +1,91 @@
 .layout {
-  width: 100vw;
-  height: 100vh;
+  // 基础样式
+  width: 100%;
+  height: 100%;
   overflow: hidden;
   position: relative;
+
+  // 移动端样式
+  &.mobile {
+    .mobileContainer {
+      width: 100%;
+      height: 100%;
+      position: relative;
+    }
+  }
+
+  // PC端样式
+  &.desktop {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+
+    .desktopContainer {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 2rem;
+    }
+
+    // 手机比例容器
+    .phoneContainer {
+      width: 375px; // iPhone 12/13宽度
+      height: 812px; // iPhone 12/13高度（19.5:9比例）
+      background: white;
+      border-radius: 24px;
+      box-shadow:
+        0 20px 60px rgba(0, 0, 0, 0.3),
+        0 0 0 1px rgba(0, 0, 0, 0.1);
+      position: relative;
+      overflow: hidden;
+    }
+
+    // PC端提示文字
+    .desktopHint {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      color: rgba(255, 255, 255, 0.9);
+      font-size: 14px;
+      padding: 12px 24px;
+      background: rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(10px);
+      border-radius: 20px;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      animation: pulse 2s infinite;
+
+      svg {
+        color: #fbbf24;
+      }
+    }
+  }
+}
+
+// 脉冲动画
+@keyframes pulse {
+  0% {
+    opacity: 0.8;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.05);
+  }
+  100% {
+    opacity: 0.8;
+    transform: scale(1);
+  }
+}
+
+// 响应式调整
+@media (max-width: 768px) {
+  .layout.desktop {
+    .phoneContainer {
+      width: 100%;
+      height: 100%;
+      border-radius: 0;
+      box-shadow: none;
+    }
+  }
 }
