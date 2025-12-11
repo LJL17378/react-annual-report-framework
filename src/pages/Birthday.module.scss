@@ -1,0 +1,60 @@
+.birthdayPage {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+  color: white;
+  padding: 40px;
+  box-sizing: border-box;
+
+  .text {
+    text-align: center;
+    font-size: 1.3rem;
+    line-height: 1.8;
+    margin-bottom: 60px;
+
+    @media (max-width: 768px) {
+      font-size: 1.1rem;
+    }
+
+    p {
+      margin: 10px 0;
+    }
+
+    .bold {
+      font-size: 2.5rem;
+      font-weight: 700;
+      color: #ffd700;
+      display: inline-block;
+      margin: 0 8px;
+
+      @media (max-width: 768px) {
+        font-size: 2rem;
+      }
+    }
+  }
+
+  .imageContainer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .icon {
+      color: white;
+      filter: drop-shadow(0 4px 20px rgba(255, 255, 255, 0.3));
+      animation: float 3s ease-in-out infinite;
+    }
+  }
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+}
