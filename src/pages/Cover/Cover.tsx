@@ -1,8 +1,8 @@
-import React from 'react';
-import { motion, Variants } from 'framer-motion';
-import { ChevronDown } from 'lucide-react';
-import { useApp } from '../context/AppContext';
-import styles from './Cover.module.scss';
+import React from "react";
+import { motion, Variants } from "framer-motion";
+import { ChevronDown } from "lucide-react";
+import { useApp } from "../../context/AppContext";
+import styles from "./Cover.module.scss";
 
 interface CoverProps {
   pageIndex: number;
@@ -19,8 +19,8 @@ const Cover: React.FC<CoverProps> = ({ pageIndex }) => {
       transition: {
         staggerChildren: 0.3,
         delayChildren: 0.2,
-      }
-    }
+      },
+    },
   };
 
   const titleVariants: Variants = {
@@ -28,8 +28,8 @@ const Cover: React.FC<CoverProps> = ({ pageIndex }) => {
     show: {
       y: 0,
       opacity: 1,
-      transition: { duration: 0.8, ease: "easeInOut" }
-    }
+      transition: { duration: 0.8, ease: "easeInOut" },
+    },
   };
 
   const subtitleVariants: Variants = {
@@ -37,8 +37,8 @@ const Cover: React.FC<CoverProps> = ({ pageIndex }) => {
     show: {
       y: 0,
       opacity: 1,
-      transition: { duration: 0.8, ease: "easeInOut" }
-    }
+      transition: { duration: 0.8, ease: "easeInOut" },
+    },
   };
 
   const arrowVariants: Variants = {
@@ -47,9 +47,9 @@ const Cover: React.FC<CoverProps> = ({ pageIndex }) => {
       opacity: 1,
       transition: {
         duration: 0.5,
-        delay: 1
-      }
-    }
+        delay: 1,
+      },
+    },
   };
 
   return (

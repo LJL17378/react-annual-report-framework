@@ -7,7 +7,7 @@ import {
   useTransform,
 } from "framer-motion";
 import { Zap, Target, TrendingUp, Navigation, Sparkles } from "lucide-react";
-import { useApp } from "../context/AppContext";
+import { useApp } from "../../context/AppContext";
 import styles from "./SvgDemo.module.scss";
 
 interface SvgDemoProps {

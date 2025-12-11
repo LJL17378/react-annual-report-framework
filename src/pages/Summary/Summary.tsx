@@ -1,7 +1,7 @@
 import React from "react";
 import { motion, Variants } from "framer-motion";
 import { Heart, Star, TrendingUp } from "lucide-react";
-import { useApp } from "../context/AppContext";
+import { useApp } from "../../context/AppContext";
 import styles from "./Summary.module.scss";
 
 interface SummaryProps {

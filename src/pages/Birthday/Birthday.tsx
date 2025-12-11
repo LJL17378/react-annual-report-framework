@@ -1,8 +1,8 @@
-import React from 'react';
-import { motion, Variants } from 'framer-motion';
-import { Cake } from 'lucide-react';
-import { useApp } from '../context/AppContext';
-import styles from './Birthday.module.scss';
+import React from "react";
+import { motion, Variants } from "framer-motion";
+import { Cake } from "lucide-react";
+import { useApp } from "../../context/AppContext";
+import styles from "./Birthday.module.scss";
 
 interface BirthdayProps {
   pageIndex: number;
@@ -19,8 +19,8 @@ const Birthday: React.FC<BirthdayProps> = ({ pageIndex }) => {
       transition: {
         staggerChildren: 0.3,
         delayChildren: 0.2,
-      }
-    }
+      },
+    },
   };
 
   const itemVariants: Variants = {
@@ -28,8 +28,8 @@ const Birthday: React.FC<BirthdayProps> = ({ pageIndex }) => {
     show: {
       x: 0,
       opacity: 1,
-      transition: { duration: 0.8, ease: "easeInOut" }
-    }
+      transition: { duration: 0.8, ease: "easeInOut" },
+    },
   };
 
   const imgVariants: Variants = {
@@ -37,8 +37,8 @@ const Birthday: React.FC<BirthdayProps> = ({ pageIndex }) => {
     show: {
       y: 0,
       opacity: 1,
-      transition: { duration: 0.8, ease: "easeInOut" }
-    }
+      transition: { duration: 0.8, ease: "easeInOut" },
+    },
   };
 
   return (
@@ -51,7 +51,9 @@ const Birthday: React.FC<BirthdayProps> = ({ pageIndex }) => {
       >
         <motion.p variants={itemVariants}>在这里，</motion.p>
         <motion.p variants={itemVariants}>
-          有 <span className={styles.bold}>{userData?.sameBirthday || 128}</span> 位同学与你一起庆祝生日，
+          有{" "}
+          <span className={styles.bold}>{userData?.sameBirthday || 128}</span>{" "}
+          位同学与你一起庆祝生日，
         </motion.p>
         <motion.p variants={itemVariants}>或许你认识他们。</motion.p>
       </motion.div>
