@@ -1,5 +1,5 @@
 import React from 'react';
-import { motion } from 'framer-motion';
+import { motion, Variants } from 'framer-motion';
 import { ChevronDown } from 'lucide-react';
 import { useApp } from '../context/AppContext';
 import styles from './Cover.module.scss';
@@ -12,7 +12,7 @@ const Cover: React.FC<CoverProps> = ({ pageIndex }) => {
   const { activeIndex } = useApp();
   const isActive = activeIndex === pageIndex;
 
-  const contentVariants = {
+  const contentVariants: Variants = {
     hidden: { opacity: 0 },
     show: {
       opacity: 1,
@@ -23,25 +23,25 @@ const Cover: React.FC<CoverProps> = ({ pageIndex }) => {
     }
   };
 
-  const titleVariants = {
+  const titleVariants: Variants = {
     hidden: { y: -50, opacity: 0 },
     show: {
       y: 0,
       opacity: 1,
-      transition: { duration: 0.8, ease: "easeOut" }
+      transition: { duration: 0.8, ease: "easeInOut" }
     }
   };
 
-  const subtitleVariants = {
+  const subtitleVariants: Variants = {
     hidden: { y: 50, opacity: 0 },
     show: {
       y: 0,
       opacity: 1,
-      transition: { duration: 0.8, ease: "easeOut" }
+      transition: { duration: 0.8, ease: "easeInOut" }
     }
   };
 
-  const arrowVariants = {
+  const arrowVariants: Variants = {
     hidden: { opacity: 0 },
     show: {
       opacity: 1,

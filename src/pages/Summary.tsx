@@ -1,8 +1,8 @@
-import React from 'react';
-import { motion } from 'framer-motion';
-import { Heart, Star, TrendingUp } from 'lucide-react';
-import { useApp } from '../context/AppContext';
-import styles from './Summary.module.scss';
+import React from "react";
+import { motion, Variants } from "framer-motion";
+import { Heart, Star, TrendingUp } from "lucide-react";
+import { useApp } from "../context/AppContext";
+import styles from "./Summary.module.scss";
 
 interface SummaryProps {
   pageIndex: number;
@@ -12,33 +12,33 @@ const Summary: React.FC<SummaryProps> = ({ pageIndex }) => {
   const { activeIndex, userData } = useApp();
   const isActive = activeIndex === pageIndex;
 
-  const contentVariants = {
+  const contentVariants: Variants = {
     hidden: { opacity: 0 },
     show: {
       opacity: 1,
       transition: {
         staggerChildren: 0.2,
         delayChildren: 0.2,
-      }
-    }
+      },
+    },
   };
 
-  const itemVariants = {
+  const itemVariants: Variants = {
     hidden: { scale: 0, opacity: 0 },
     show: {
       scale: 1,
       opacity: 1,
-      transition: { duration: 0.6, ease: "easeOut" }
-    }
+      transition: { duration: 0.6, ease: "easeInOut" },
+    },
   };
 
-  const textVariants = {
+  const textVariants: Variants = {
     hidden: { y: 30, opacity: 0 },
     show: {
       y: 0,
       opacity: 1,
-      transition: { duration: 0.8, ease: "easeOut" }
-    }
+      transition: { duration: 0.8, ease: "easeInOut" },
+    },
   };
 
   return (

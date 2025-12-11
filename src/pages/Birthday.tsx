@@ -1,5 +1,5 @@
 import React from 'react';
-import { motion } from 'framer-motion';
+import { motion, Variants } from 'framer-motion';
 import { Cake } from 'lucide-react';
 import { useApp } from '../context/AppContext';
 import styles from './Birthday.module.scss';
@@ -12,7 +12,7 @@ const Birthday: React.FC<BirthdayProps> = ({ pageIndex }) => {
   const { activeIndex, userData } = useApp();
   const isActive = activeIndex === pageIndex;
 
-  const contentVariants = {
+  const contentVariants: Variants = {
     hidden: { opacity: 0 },
     show: {
       opacity: 1,
@@ -23,21 +23,21 @@ const Birthday: React.FC<BirthdayProps> = ({ pageIndex }) => {
     }
   };
 
-  const itemVariants = {
+  const itemVariants: Variants = {
     hidden: { x: -50, opacity: 0 },
     show: {
       x: 0,
       opacity: 1,
-      transition: { duration: 0.8, ease: "easeOut" }
+      transition: { duration: 0.8, ease: "easeInOut" }
     }
   };
 
-  const imgVariants = {
+  const imgVariants: Variants = {
     hidden: { y: 100, opacity: 0 },
     show: {
       y: 0,
       opacity: 1,
-      transition: { duration: 0.8, ease: "easeOut" }
+      transition: { duration: 0.8, ease: "easeInOut" }
     }
   };
 
