@@ -1,0 +1,166 @@
+.svgDemoPage {
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  overflow-y: auto;
+  padding: 2rem;
+
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+  }
+
+  .title {
+    font-size: 3rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+
+    .titleIcon {
+      color: #fbbf24;
+    }
+  }
+
+  .subtitle {
+    font-size: 1.5rem;
+    text-align: center;
+    margin-bottom: 3rem;
+    opacity: 0.9;
+  }
+
+  .demoGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+    margin-bottom: 3rem;
+
+    @media (max-width: 768px) {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  .demoCard {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+    padding: 2rem;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+    &:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+    }
+  }
+
+  .demoTitle {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    color: #fbbf24;
+  }
+
+  .svgContainer {
+    width: 100%;
+    height: 150px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1.5rem;
+    background: rgba(0, 0, 0, 0.2);
+    border-radius: 12px;
+    padding: 1rem;
+
+    svg {
+      filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.3));
+    }
+  }
+
+  .demoDesc {
+    font-size: 1rem;
+    line-height: 1.6;
+    opacity: 0.9;
+    text-align: center;
+  }
+
+  .instructions {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+    padding: 2.5rem;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    margin-top: 2rem;
+  }
+
+  .instructionsTitle {
+    font-size: 2rem;
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+    text-align: center;
+    color: #fbbf24;
+  }
+
+  .instructionsList {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+
+    li {
+      font-size: 1.1rem;
+      margin-bottom: 1rem;
+      padding-left: 2rem;
+      position: relative;
+      line-height: 1.6;
+
+      &::before {
+        content: "✨";
+        position: absolute;
+        left: 0;
+        top: 0;
+      }
+
+      strong {
+        color: #fbbf24;
+        font-weight: 600;
+      }
+    }
+  }
+}
+
+// 响应式调整
+@media (max-width: 768px) {
+  .svgDemoPage {
+    padding: 1rem;
+
+    .container {
+      padding: 1rem;
+    }
+
+    .title {
+      font-size: 2.2rem;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+
+    .subtitle {
+      font-size: 1.2rem;
+    }
+
+    .demoCard {
+      padding: 1.5rem;
+    }
+
+    .instructions {
+      padding: 1.5rem;
+    }
+  }
+}

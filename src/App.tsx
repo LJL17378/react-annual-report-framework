@@ -9,11 +9,13 @@ import Layout from './components/Layout/Layout';
 import Cover from './pages/Cover';
 import Birthday from './pages/Birthday';
 import Summary from './pages/Summary';
+import SvgDemo from './pages/SvgDemo';
 
 const PAGES = [
   { Component: Cover, name: 'cover' },
   { Component: Birthday, name: 'birthday' },
   { Component: Summary, name: 'summary' },
+  { Component: SvgDemo, name: 'svg-demo' },
 ];
 
 const AppContent: React.FC = () => {
